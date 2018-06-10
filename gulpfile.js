@@ -37,12 +37,12 @@ gulp.task('scss', () => {
  * JS methods
  */
 gulp.task('js', () => {
-  return gulp.src('./src/**/*.js')
+  return gulp.src(['./src/assets/js/**/*.js'])
     .pipe(babel({
       presets: ['es2015-nostrict', 'babel-preset-es2016', 'babel-preset-es2017', 'babel-preset-stage-2']
     }))
     .pipe(uglify())
-    .pipe(gulp.dest(themePath))
+    .pipe(gulp.dest(themePath + '/assets/js'))
 })
 
 
@@ -54,12 +54,18 @@ gulp.task('static', () => {
     .pipe(gulp.dest(themePath))
 })
 
+gulp.task('libs', () => {
+  return gulp.src(['./src/assets/libs/**/*.js', './src/assets/libs/**/*.css'])
+    .pipe(gulp.dest(themePath + '/assets/libs'))
+})
+
 
 /**
  * Gulp processes
  */
 gulp.task('watch', () => {
   gulp.watch(['./src/**/*.php', './src/**/*.svg', './src/**/*.png', './src/**/*.jpg', './src/icon.txt'], ['static'])
+  gulp.watch(['./src/assets/libs/**/*.js', './src/assets/libs/**/*.css'], ['libs'])
   gulp.watch('./src/**/*.scss', ['scss'])
   gulp.watch('./src/**/*.js', ['js'])
 })
@@ -69,5 +75,5 @@ gulp.task('clean', () => {
     .pipe(clean({ force: true }))
 })
 
-gulp.task('build', ['static', 'scss', 'js'])
-gulp.task('default', ['static', 'scss', 'js', 'watch'])
+gulp.task('build', ['static', 'libs', 'scss', 'js'])
+gulp.task('default', ['static', 'libs', 'scss', 'js', 'watch'])
