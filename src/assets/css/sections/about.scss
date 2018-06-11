@@ -1,9 +1,23 @@
 section.about {
-  margin-bottom: 240px;
+  padding-top: 80px;
 
   .about-paragraphs {
     column-count: 2;
     column-gap: 40px;
     margin-top: 40px;
   }
+}
+
+
+@media only screen and (max-width: 768px) {
+
+  section.about .about-paragraphs {
+    column-count: 1;
+    column-gap: 0;
+
+    p {
+      width: 100%;
+    }
+  }
+
 }

@@ -1,5 +1,4 @@
 section.newsletter {
-  margin-bottom: 240px;
 
   .newsletter-container {
     width: 100%;
@@ -34,4 +33,14 @@ section.newsletter {
       }
     }
   }
+}
+
+
+@media only screen and (max-width: 768px) {
+
+  section.newsletter .newsletter-container {
+    padding: 30px;
+    margin-top: 90px;
+  }
+
 }
