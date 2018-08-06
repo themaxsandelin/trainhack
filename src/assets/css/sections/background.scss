@@ -1,17 +1,17 @@
-section.about {
+section.background {
   padding-top: 80px;
 
-  .about-paragraphs {
+  .background-paragraphs {
     column-count: 2;
     column-gap: 40px;
-    margin-top: 40px;
+    margin-top: 80px;
   }
 }
 
 
 @media only screen and (max-width: 768px) {
 
-  section.about .about-paragraphs {
+  section.background .background-paragraphs {
     column-count: 1;
     column-gap: 0;
 

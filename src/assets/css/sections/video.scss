@@ -39,16 +39,21 @@ section.video {
 
     .video-wrapper {
       width: 100%;
+      padding: 56.25% 0 0;
       pointer-events: none;
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
 
       transition: transform 0.4s ease, opacity 0.2s ease;
     }
 
-    .vjs_video_3-dimensions,
-    video {
+    iframe#video {
       width: 100%;
-      height: auto;
-      border-radius: 8px;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
 
     .info-wrapper {
@@ -70,10 +75,10 @@ section.video {
         background: #fff;
         border: 1px solid #E9E4EF;
         border-radius: 8px;
+        box-shadow: 0px 7px 24px -10px rgba(#000, 0.2);
         position: relative;
         padding: 50px;
         text-align: center;
-        box-shadow: 0px 7px 24px -10px rgba(#000, 0.2);
 
         button {
           position: absolute;

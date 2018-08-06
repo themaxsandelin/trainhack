@@ -10,7 +10,8 @@
 // Sections
 @import './assets/css/sections/hero';
 @import './assets/css/sections/video';
-@import './assets/css/sections/about';
+@import './assets/css/sections/background';
+@import './assets/css/sections/event';
 @import './assets/css/sections/newsletter';
 @import './assets/css/sections/contact';
 
@@ -20,6 +21,7 @@
 */
 
 body {
+  font-family: 'Muli', sans-serif;
   color: #221F26;
 }
 
@@ -53,6 +55,13 @@ h4 {
   font-size: 17px;
   font-weight: 600;
   line-height: 26px;
+
+  &.block {
+    font-family: 'museo-sans-rounded', sans-serif;
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: 900;
+  }
 }
 
 h5 {
@@ -277,8 +286,14 @@ section {
   }
 
   .section-head {
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     h3 {
-      margin: 5px 0 15px;
+      margin: 5px 0 25px;
     }
 
     h5 {
