@@ -4,13 +4,6 @@ get_header();
 
 $content = get_fields();
 
-// Google Maps API key
-// AIzaSyDU3-i_wURd0YhAGROFHbZJzJUQ_kC8tnM
-
-// echo '<pre>';
-// print_r($content['video_section']);
-// echo '</pre>';
-
 ?>
 
 <section class="hero" style="background: url(<?php echo $content['hero_section']['background']['url']; ?>) no-repeat center; background-size: cover;">
@@ -101,7 +94,15 @@ $content = get_fields();
           <?php foreach ($content['event_section']['left_column_blocks'] as $block): ?>
             <li>
               <h4 class="block"><?php echo $block['headline']; ?></h4>
-              <p><?php echo nl2br($block['paragraph']); ?></p>
+
+                <?php
+                  $paragraph = nl2br($block['paragraph']);
+                  while (strpos($paragraph, '<p></p>') !== false) {
+                    $paragraph = str_replace('<p></p>', '', $paragraph);
+                  }
+                  echo $paragraph;
+                ?>
+
             </li>
           <?php endforeach; ?>
         </ul>
@@ -112,7 +113,7 @@ $content = get_fields();
           <?php foreach ($content['event_section']['right_column_blocks'] as $block): ?>
             <li>
               <h4 class="block"><?php echo $block['headline']; ?></h4>
-              <p><?php echo nl2br($block['paragraph']); ?></p>
+              <?php echo nl2br($block['paragraph']); ?>
             </li>
           <?php endforeach; ?>
         </ul>

@@ -93,7 +93,7 @@ section.event {
       ul.info-blocks {
         width: 100%;
 
-        li {
+        > li {
           width: 100%;
           margin-bottom: 30px;
 
@@ -107,6 +107,46 @@ section.event {
 
           p {
             line-height: 24px;
+
+            a {
+              text-decoration: none;
+              color: #631AE4;
+              font-weight: 700;
+            }
+          }
+
+          ul {
+            br {
+              display: none;
+            }
+
+            li {
+              padding-left: 20px;
+              margin-bottom: 10px;
+              position: relative;
+
+              &:last-of-type {
+                margin-bottom: 0px;
+              }
+
+              &:before {
+                content: '';
+                width: 8px;
+                height: 8px;
+                border-radius: 3px;
+                border: 2px solid #221F26;
+                position: absolute;
+                top: 8px;
+                left: 0;
+                box-sizing: border-box;
+              }
+
+              a {
+                text-decoration: none;
+                color: #631AE4;
+                font-weight: 700;
+              }
+            }
           }
         }
       }
