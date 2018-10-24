@@ -25,7 +25,7 @@
   </head>
   <body>
 
-    <header>
+    <header <?php if (is_front_page()) echo 'class="light"'; ?>>
       <div class="container">
         <a href="/" class="logo">
           <span>2018</span>

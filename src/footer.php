@@ -7,9 +7,11 @@
       <div>
         <?php wp_footer(); ?>
 
-        <script src="<?php echo get_template_directory_uri(); ?>/assets/js/navigation.js" defer></script>
-        <script src="<?php echo get_template_directory_uri(); ?>/assets/js/event.js" defer></script>
-        <script src="<?php echo get_template_directory_uri(); ?>/assets/js/video.js" defer></script>
+        <?php if (is_front_page()): ?>
+          <script src="<?php echo get_template_directory_uri(); ?>/assets/js/navigation.js" defer></script>
+          <script src="<?php echo get_template_directory_uri(); ?>/assets/js/event.js" defer></script>
+          <script src="<?php echo get_template_directory_uri(); ?>/assets/js/video.js" defer></script>
+        <?php endif; ?>
       </div>
     </footer>
 

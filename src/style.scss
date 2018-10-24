@@ -165,6 +165,20 @@ header {
   display: flex;
   justify-content: center;
 
+  &.light .container {
+    a.logo svg .fill {
+      fill: #fff;
+    }
+
+    ul.menu li a {
+      color: rgba(#fff, 0.75);
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+
   .container {
     width: 100%;
     max-width: 1200px;
@@ -196,7 +210,7 @@ header {
         width: 136px;
 
         .fill {
-          fill: #fff;
+          fill: #221F26;
         }
       }
     }
@@ -216,13 +230,13 @@ header {
           font-family: 'museo-sans-rounded', sans-serif;
           font-size: 15px;
           font-weight: 700;
-          color: rgba(#fff, 0.75);
+          color: rgba(#221F26, 0.75);
           text-decoration: none;
 
           transition: color 0.2s ease;
 
           &:hover {
-            color: #fff;
+            color: #221F26;
           }
         }
       }
@@ -283,6 +297,10 @@ section {
     width: 100%;
     max-width: 1200px;
     position: relative;
+
+    &.narrow {
+      max-width: 720px;
+    }
   }
 
   .section-head {
